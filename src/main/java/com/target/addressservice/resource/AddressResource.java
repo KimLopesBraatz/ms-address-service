@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-
 @RestController
 @AllArgsConstructor
 @RequestMapping(value = "/address")
@@ -18,9 +17,9 @@ public class AddressResource {
 
     private AddressService service;
 
-    @GetMapping("/cep/{cep}")
-    public ResponseEntity<Address> getAddressByCep(@PathVariable Long cep) {
-        return new ResponseEntity<>(service.getAddressByCep(cep), HttpStatus.OK);
+    @GetMapping("/zipCode/{zipCode}")
+    public ResponseEntity<Address> getAddressByZipCode(@PathVariable Long zipCode) {
+        return new ResponseEntity<>(service.getAddressByZipCode(zipCode), HttpStatus.OK);
     }
 
     @PostMapping

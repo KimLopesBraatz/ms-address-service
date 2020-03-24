@@ -13,8 +13,8 @@ public class AddressService {
 
     private AddressRepository repository;
 
-    public Address getAddressByCep(Long cep) {
-        return repository.findByCep(cep);
+    public Address getAddressByZipCode(Long zipCode) {
+        return repository.findByZipCode(zipCode);
     }
 
     public List<Address> save(List<Address> addressList) {

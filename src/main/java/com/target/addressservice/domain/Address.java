@@ -20,22 +20,22 @@ public class Address implements Serializable {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
-    @Column(name = "id", columnDefinition = "BIGINT")
+    @Column(name = "id", columnDefinition = "BIGINT", nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "cep", columnDefinition = "BIGINT")
-    private Long cep;
+    @Column(name = "zip_code", columnDefinition = "BIGINT", nullable = false)
+    private Long zipCode;
 
-    @Column(name = "logradouro", columnDefinition = "VARCHAR", length = 60)
-    private String logradouro;
+    @Column(name = "public_area", columnDefinition = "VARCHAR", length = 60, nullable = false)
+    private String publicArea;
 
-    @Column(name = "bairro", columnDefinition = "VARCHAR", length = 30)
-    private String bairro;
+    @Column(name = "neighborhood", columnDefinition = "VARCHAR", length = 30, nullable = false)
+    private String neighborhood;
 
-    @Column(name = "cidade", columnDefinition = "VARCHAR", length = 30)
-    private String cidade;
+    @Column(name = "city", columnDefinition = "VARCHAR", length = 30, nullable = false)
+    private String city;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "uf", columnDefinition = "VARCHAR", length = 2)
-    private UnidadeFederativaEnum uf;
+    @Column(name = "federative_unit", columnDefinition = "VARCHAR", length = 2, nullable = false)
+    private UnidadeFederativaEnum federativeUnit;
 }

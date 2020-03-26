@@ -17,6 +17,10 @@ public class AddressService {
         return repository.findByZipCode(zipCode);
     }
 
+    public List<Address> getAddressByPersonId(Long personId) {
+        return repository.findByPersonId(personId);
+    }
+
     public List<Address> save(List<Address> addressList) {
         return repository.saveAll(addressList);
     }

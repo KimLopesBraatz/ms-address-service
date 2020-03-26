@@ -17,7 +17,12 @@ public class AddressResource {
 
     private AddressService service;
 
-    @GetMapping("/zipCode/{zipCode}")
+    @GetMapping("/personid/{personId}")
+    public ResponseEntity<List<Address>> getAddressByPersonId(@PathVariable Long personId) {
+        return new ResponseEntity<>(service.getAddressByPersonId(personId), HttpStatus.OK);
+    }
+
+    @GetMapping("/zipcode/{zipCode}")
     public ResponseEntity<Address> getAddressByZipCode(@PathVariable Long zipCode) {
         return new ResponseEntity<>(service.getAddressByZipCode(zipCode), HttpStatus.OK);
     }

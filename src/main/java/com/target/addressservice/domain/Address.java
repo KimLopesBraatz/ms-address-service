@@ -38,4 +38,7 @@ public class Address implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "federative_unit", columnDefinition = "VARCHAR", length = 2, nullable = false)
     private UnidadeFederativaEnum federativeUnit;
+
+    @Column(name = "person_id", columnDefinition = "BIGINT")
+    private Long personId;
 }
